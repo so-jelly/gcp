@@ -1,11 +1,15 @@
 # Google Cloud Platform
 
-use GCP
+[Console](https://console.cloud.google.com/)
 
-Gcloud - gcloud init
-Console - cloud shell
+Most command provide 'equivalent code' for configuring via shell (gcloud) or as code(rest) or config(terraform)
+
+Gcloud - `gcloud init`
+
+gsutil - include with gcloud `gsutil`
+
 Terraform - config as code
-  Backend - make a bucket, gsutil mb gs://
+  Backend - make a bucket, `gsutil mb gs://<bucket>`
 
 ## Project
 
@@ -21,14 +25,23 @@ gsutil mb gs://$BUCKET
 
 ## Cloud Shell
 
-from the web
-command line: `gcloud cloud-shell ssh`
+ephemeral environment
+- only one at a time, shared in tabs, windows, from the shell
+- 5 gb storage
+- includes gcloud / gsutil
 
+from the web - "activate cloud shell"
+
+command line: `gcloud cloud-shell ssh`
 
 ## Instance
 
-console
-gcloud compute instances create
+from the console https://console.cloud.google.com/compute/instances
+
+`gcloud compute instances create`
+
 terraform => `gcloud beta --project=$PROJECT resource-config bulk-export --resource-format=terraform >> export.tf`
 
-`gcloud compute ssh test`
+connect to instance - `gcloud compute ssh test`
+
+<!-- TODO - oslogin -->
